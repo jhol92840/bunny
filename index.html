@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fuzzy Fuzzy Cute Cute</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="chant" aria-hidden="true">
+        fuzzy fuzzy cute cute fuzzy fuzzy cute cute fuzzy fuzzy cute cute
+      </div>
+      <header class="hero">
+        <h1>Fuzzy Fuzzy Cute Cute</h1>
+        <p>
+          The fuzzy fuzzy cute cute chorus has awakened a city of hopping
+          bunnies. Guide the crowd through each chapter without letting the
+          cuteness overload explode into fury.
+        </p>
+      </header>
+      <section class="hud" aria-label="Story status">
+        <div class="hud__row">
+          <span class="hud__label">Chapter</span>
+          <span id="chapter-title">Prologue</span>
+        </div>
+        <div class="hud__row hud__objective" id="chapter-objective">
+          Start the story to begin the fuzzy fuzzy cute cute saga.
+        </div>
+        <div class="hud__stats">
+          <div>
+            <span class="hud__label">Time</span>
+            <span id="time-left">--</span>
+          </div>
+          <div>
+            <span class="hud__label">Score</span>
+            <span id="score">0</span>
+          </div>
+          <div>
+            <span class="hud__label">Rage</span>
+            <span id="rage-warning">Calm</span>
+          </div>
+        </div>
+      </section>
+      <section class="controls" aria-label="Game controls">
+        <button id="toggle-song" type="button">Play fuzzy fuzzy cute cute</button>
+      </section>
+      <section class="status" aria-live="polite">
+        <div class="status__label">Overstimulation</div>
+        <div class="meter" role="presentation">
+          <div class="meter__fill" id="meter-fill"></div>
+        </div>
+        <div class="status__label">Chapter progress</div>
+        <div class="meter meter--progress" role="presentation">
+          <div class="meter__fill meter__fill--progress" id="progress-fill"></div>
+        </div>
+        <div class="status__text" id="status-text">Calm and delighted.</div>
+        <div class="status__count" id="bunny-count">Bunnies: 0</div>
+        <div class="status__count" id="combo-count">Combo: x1</div>
+        <div class="status__count" id="hazard-count">Hazards survived: 0</div>
+        <div class="legend" aria-label="Interactable legend">
+          <span><i class="legend__dot legend__dot--bunny"></i>Tap bunnies: score + calm</span>
+          <span><i class="legend__dot legend__dot--calm"></i>Mint bubble: strong calm</span>
+          <span><i class="legend__dot legend__dot--spark"></i>Pink bubble: score boost</span>
+          <span><i class="legend__dot legend__dot--burst"></i>Gold bubble: risky burst</span>
+          <span><i class="legend__dot legend__dot--hazard"></i>Red sparks: clear before pop</span>
+        </div>
+        <div class="status__hint">
+          Bunnies and hazards spawn automatically. Place a file named
+          <span>fuzzy-fuzzy-cute-cute.mp3</span> next to this page to enable the
+          song.
+        </div>
+      </section>
+      <div
+        id="field"
+        class="field"
+        role="img"
+        aria-label="A field where bunnies hop around."
+      ></div>
+    </div>
+    <div id="story-panel" class="story-panel" role="dialog" aria-live="polite">
+      <div class="story-card">
+        <div class="story-tag" id="story-tag">Prologue</div>
+        <h2 id="story-title">The Fuzzy Whisper</h2>
+        <p id="story-text">
+          The chorus begins, and the first bunnies hop into view. Keep the crowd
+          calm to open the story.
+        </p>
+        <div class="story-actions">
+          <button id="start-story" type="button">Start story</button>
+          <button id="next-chapter" type="button" hidden>Next chapter</button>
+          <button id="retry-chapter" type="button" hidden>Retry chapter</button>
+        </div>
+        <p id="story-summary" class="story-summary"></p>
+      </div>
+    </div>
+    <audio id="song" preload="auto" src="fuzzy-fuzzy-cute-cute.mp3"></audio>
+    <script src="script.js"></script>
+  </body>
+</html>
